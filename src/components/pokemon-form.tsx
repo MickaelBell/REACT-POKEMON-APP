@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import Pokemon from '../models/pokemon';
 import formatType from '../helpers/format-type';
 import { useHistory } from 'react-router-dom';
+import PokemonService from '../services/pokemon-service';
 
 type Props = {
     pokemon: Pokemon
@@ -72,12 +73,12 @@ const PokemonForm: FunctionComponent<Props> = ({ pokemon }) => {
         const isFormValid = validateForm();
         if (isFormValid) {
             //   pokemon.picture = form.picture.value;
-            //   pokemon.name = form.name.value;
-            //   pokemon.hp = form.hp.value;
-            //   pokemon.cp = form.cp.value;
-            //   pokemon.types = form.types.value;
+            pokemon.name = form.name.value;
+            pokemon.hp = form.hp.value;
+            pokemon.cp = form.cp.value;
+            pokemon.types = form.types.value;
             //   isEditForm ? updatePokemon() : addPokemon();
-            history.push(`/pokemons/${pokemon.id}`);
+            PokemonService.updatePokemon(pokemon).then(() => history.push(`/pokemons/${pokemon.id}`));
         }
     }
 
