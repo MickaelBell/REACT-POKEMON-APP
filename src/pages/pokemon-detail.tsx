@@ -46,10 +46,10 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({ match 
                                                         <span key={type} className={formatType(type)}>{type}</span>
                                                     ))}</td>
                                             </tr>
-                                            <tr>
+                                            {/* <tr>
                                                 <td>Date de création</td>
                                                 <td>{formatDate(pokemon.created)}</td>
-                                            </tr>
+                                            </tr> */}
                                         </tbody>
                                     </table>
                                 </div>

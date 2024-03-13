@@ -9,7 +9,15 @@ const PokemonAdd: FunctionComponent = () => {
 
     const pokemons = usePokemons();
 
-    const [id] = useState<number>(pokemons.length + 1);
+    const generateUniqueId = (): string => {
+        let id: number;
+        do {
+            id = Math.floor(Math.random() * 98) + 1;
+        } while (pokemons.some(pokemon => pokemon.id === id.toString()));
+        return id.toString();
+    };
+
+    const [id] = useState<string>(generateUniqueId());
     const [pokemon] = useState<Pokemon>(new Pokemon(id));
 
 

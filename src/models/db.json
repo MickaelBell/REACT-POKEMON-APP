@@ -123,6 +123,42 @@
       "types": [
         "Feu"
       ]
+    },
+    {
+      "id": "13",
+      "hp": 40,
+      "cp": 10,
+      "name": "MansourOMax",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/053.png",
+      "types": [
+        "Normal",
+        "Plante",
+        "Eau"
+      ]
+    },
+    {
+      "id": "65",
+      "hp": "17",
+      "cp": 10,
+      "name": "MickaOus",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/055.png",
+      "types": [
+        "Plante",
+        "Feu",
+        "Combat"
+      ]
+    },
+    {
+      "id": "19",
+      "hp": 100,
+      "cp": 10,
+      "name": "EzéChiant",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/059.png",
+      "types": [
+        "Insecte",
+        "Psy",
+        "Electrik"
+      ]
     }
   ]
 }
