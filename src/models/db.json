@@ -159,6 +159,18 @@
         "Psy",
         "Electrik"
       ]
+    },
+    {
+      "id": "97",
+      "hp": 100,
+      "cp": 10,
+      "name": "JoRale",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/188.png",
+      "types": [
+        "Insecte",
+        "Vol",
+        "Combat"
+      ]
     }
   ]
 }
