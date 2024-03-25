@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { RouteComponentProps, Link } from 'react-router-dom';
 import formatType from '../helpers/format-type';
 import usePokemon from '../hooks/pokemon.hook';
-import Loader from '../components/loader';
 
 type Params = { id: string };
 
@@ -46,10 +45,6 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({ match 
                                                         <span key={type} className={formatType(type)}>{type}</span>
                                                     ))}</td>
                                             </tr>
-                                            {/* <tr>
-                                                <td>Date de création</td>
-                                                <td>{formatDate(pokemon.created)}</td>
-                                            </tr> */}
                                         </tbody>
                                     </table>
                                 </div>
@@ -61,7 +56,7 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({ match 
                     </div>
                 </div>
             ) : (
-                <h4 className="center"><Loader /></h4>
+                <h4 className="center">Aucun pokémon à afficher !</h4>
             )}
         </div>
     );
