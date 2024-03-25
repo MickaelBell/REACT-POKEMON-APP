@@ -9,7 +9,7 @@ export default class PokemonService {
     }
 
     static getPokemonsFromApi(): Promise<any[]> {
-        return fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=60')
+        return fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=650')
             .then(response => response.json())
             .catch(error => this.handleError(error));
     }

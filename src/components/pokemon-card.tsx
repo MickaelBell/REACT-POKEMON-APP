@@ -5,7 +5,7 @@ import formatType from "../helpers/format-type";
 import { useHistory } from "react-router-dom";
 
 type Props = {
-  pokemon: Pokemon
+  pokemon: any
   borderColor?: string
 };
 
@@ -13,6 +13,14 @@ const PokemonCard: FunctionComponent<Props> = ({ pokemon, borderColor = '#009688
 
   const [color, setColor] = useState<string>();
   const history = useHistory();
+  const url = pokemon.url;
+  const numberAtEnd = extractNumber(url);
+
+  function extractNumber(url: any) {
+    const numberAtEndRegex = /(\d+)\/$/;
+    const match = url.match(numberAtEndRegex);
+    return match ? match[1].padStart(3, '0') : '';
+  }
 
   const showBorder = () => {
     setColor(borderColor);
@@ -30,14 +38,14 @@ const PokemonCard: FunctionComponent<Props> = ({ pokemon, borderColor = '#009688
     <div className='col s6 m4' onClick={() => goToPokemon(pokemon.id)} onMouseEnter={showBorder} onMouseLeave={hideBorder}>
       <div className='card horizontal' style={{ borderColor: color }}>
         <div className='card-image'>
-          <img src={pokemon.picture} alt=" "></img>
+          <img src={'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' + numberAtEnd + '.png'} alt=" "></img>
         </div>
         <div className='card-stacked'>
           <div className='card-content'>
             <p>{pokemon.name}</p>
-            {pokemon.types.map(type => (
+            {/* {pokemon.types.map(type => (
               <span key={type} className={formatType(type)}>{type}</span>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
