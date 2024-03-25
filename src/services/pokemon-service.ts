@@ -8,6 +8,12 @@ export default class PokemonService {
             .catch(error => this.handleError(error));
     }
 
+    static getPokemonsFromApi(): Promise<any[]> {
+        return fetch('https://pokeapi.co/api/v2/pokemon')
+            .then(response => response.json())
+            .catch(error => this.handleError(error));
+    }
+
     static getPokemon(id: number): Promise<Pokemon | null> {
         return fetch(`http://localhost:3001/pokemons/${id}`)
             .then(response => response.json())
@@ -52,5 +58,11 @@ export default class PokemonService {
 
     static handleError(error: Error): void {
         console.error(error);
+    }
+
+    static searchPokemon(term: string): Promise<Pokemon[]> {
+        return fetch(`http://localhost:3001/pokemons?name=${term}`)
+            .then(response => response.json())
+            .catch(error => this.handleError(error));
     }
 }

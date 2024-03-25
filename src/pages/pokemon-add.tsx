@@ -3,18 +3,17 @@ import PokemonForm from '../components/pokemon-form';
 import Pokemon from '../models/pokemon';
 import usePokemons from '../hooks/pokemons.hook';
 
-type Params = { id: string };
 
 const PokemonAdd: FunctionComponent = () => {
 
     const pokemons = usePokemons();
 
     const generateUniqueId = (): string => {
-        let id: number;
+        let number: number;
         do {
-            id = Math.floor(Math.random() * 98) + 1;
-        } while (pokemons.some(pokemon => pokemon.id === id.toString()));
-        return id.toString();
+            number = Math.floor(Math.random() * 98) + 1;
+        } while (pokemons.some(pokemon => pokemon.id === number.toString()));
+        return number.toString();
     };
 
     const [id] = useState<string>(generateUniqueId());

@@ -171,6 +171,30 @@
         "Vol",
         "Combat"
       ]
+    },
+    {
+      "id": "35",
+      "hp": 100,
+      "cp": 10,
+      "name": "Nouta",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/183.png",
+      "types": [
+        "Plante",
+        "Poison",
+        "Fée"
+      ]
+    },
+    {
+      "id": "30",
+      "hp": 100,
+      "cp": 10,
+      "name": "MarieSG",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/098.png",
+      "types": [
+        "Fée",
+        "Plante",
+        "Feu"
+      ]
     }
   ]
 }
