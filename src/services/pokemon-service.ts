@@ -1,4 +1,5 @@
 import Pokemon from "../models/pokemon";
+import PokemonsApi from "../models/pokemonsApi";
 
 export default class PokemonService {
 
@@ -8,8 +9,14 @@ export default class PokemonService {
             .catch(error => this.handleError(error));
     }
 
-    static getPokemonsFromApi(): Promise<any[]> {
-        return fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=650')
+    static getPokemonsFromApi(): Promise<PokemonsApi> {
+        return fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=1025')
+            .then(response => response.json())
+            .catch(error => this.handleError(error));
+    }
+
+    static getPokemonsTypesFromApi(name: string): Promise<any> {
+        return fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
             .then(response => response.json())
             .catch(error => this.handleError(error));
     }

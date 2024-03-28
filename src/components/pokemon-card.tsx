@@ -13,8 +13,7 @@ const PokemonCard: FunctionComponent<Props> = ({ pokemon, borderColor = '#009688
 
   const [color, setColor] = useState<string>();
   const history = useHistory();
-  const url = pokemon.url;
-  const numberAtEnd = extractNumber(url);
+  const numberAtEnd = extractNumber(pokemon.url);
 
   function extractNumber(url: any) {
     const numberAtEndRegex = /(\d+)\/$/;
@@ -42,7 +41,7 @@ const PokemonCard: FunctionComponent<Props> = ({ pokemon, borderColor = '#009688
         </div>
         <div className='card-stacked'>
           <div className='card-content'>
-            <p>{pokemon.name}</p>
+            <p><strong>{pokemon.name.toUpperCase()}</strong></p>
             {/* {pokemon.types.map(type => (
               <span key={type} className={formatType(type)}>{type}</span>
             ))} */}

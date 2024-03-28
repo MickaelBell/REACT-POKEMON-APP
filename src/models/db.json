@@ -195,6 +195,18 @@
         "Plante",
         "Feu"
       ]
+    },
+    {
+      "id": "34",
+      "hp": 100,
+      "cp": 10,
+      "name": "RachidAirBall",
+      "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/650.png",
+      "types": [
+        "Electrik",
+        "Vol",
+        "Eau"
+      ]
     }
   ]
 }
